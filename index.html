@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>HTML with Copilot</title>
+</head>
+<body>
+    <header>
+        <nav role="navigation" class="sidebar">
+            <ul>
+            <li onclick=hideSidebar()><i class="fas fa-bars"></i> </li>
+            <li ><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#Services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="return-menu">
+            <button id="return-menu-button" onclick="showSidebar()"><i class="fas fa-chevron-down"></i></button>
+        </div>
+    </header>
+    <article id="introduction" role="doc-introduction">
+        <h2>Introduction</h2>
+        <p>Hello! I am currently learning web development and exploring various technologies to build dynamic and responsive websites. My journey involves mastering HTML, CSS, and JavaScript, along with diving into popular frameworks and libraries.</p>
+        <p>Through hands-on projects and continuous learning, I aim to enhance my skills and create impactful web applications. I am excited to share my progress and projects with you as I grow in this field.</p>
+    </article>
+    <section id="about-me">
+        <h2>About Me</h2>
+        <p>Hello! My name is John Doe, and I am a passionate web developer with a love for creating dynamic and responsive websites. With a background in computer science and several years of experience in the industry, I have honed my skills in HTML, CSS, JavaScript, and various web development frameworks.</p>
+        <p>In my free time, I enjoy exploring new technologies, contributing to open-source projects, and continuously learning to stay updated with the latest trends in web development. I am dedicated to delivering high-quality work and always strive to exceed client expectations.</p>
+        
+        <ul id="skills" style="list-style-position: inside; list-style-type: none">
+            <h3>Programming Skills</h3>
+            <li class="html">HTML</li>
+            <li class="css">CSS</li>
+            <li class="js">JavaScript</li>
+            <li class="py">Python</li>
+            <li class="njs">Node.js</li>
+            <li class="react">React</li>
+            <li class="angular">Angular</li>
+        </ul>
+    </section>
+    </section>
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-filter">
+            <label for="category-select">Select Category:</label>
+            <select id="category-select" onchange="filterProjects()">
+                <option value="all">All</option>
+                <option value="webdev">Web Development</option>
+                <option value="backend">Back-end Development</option>
+                <option value="ml">Machine Learning</option>
+            </select>
+        </div>
+        <div class="project-card">
+            <ul>
+                <li id="project1-webdev" class="project webdev">
+                    <h3>Front-End UI Project</h3>
+                    <p>This project focuses on front-end development, utilizing HTML, CSS, and JavaScript to create a dynamic and responsive user interface.</p>
+                </li>
+                <li id="project2-webdev" class="project webdev">
+                    <h3>Responsive Web Design</h3>
+                    <p>This project showcases a responsive web design, utilizing modern CSS techniques such as Flexbox and Grid to create a layout that adapts seamlessly to different screen sizes and devices.</p>
+                </li>
+                <li id="project2-backend" class="project backend">
+                    <h3>Project 2</h3>
+                    <p>This project is centered around back-end development, implementing server-side logic using Node.js and Express to handle API requests and database interactions.</p>
+                </li>
+                <li id="project3-ml" class="project ml">
+                    <h3>Project 3</h3>
+                    <p>This project involves machine learning, leveraging Python and TensorFlow to build and train models for predictive analytics and data processing.</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+        </ul>
+    </section>
+    <section id="contact">
+        <h2>Contact</h2>
+        <form action="/submit-form" method="post" class="contact-form">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required style="max-width: 100%;"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </section>
+    <script src=script.js></script>
+</body>
+</html>
