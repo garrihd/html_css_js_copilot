@@ -46,3 +46,24 @@ function minimizeNavbar() {
         icon.classList.add("fa-chevron-down"); // Change to "down" when minimized
     }
 }
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".scroll-link").forEach(link => {
+        link.addEventListener("click", function (e) {
+            e.preventDefault(); // Prevent default anchor behavior
+            let targetId = this.getAttribute("href"); // Get section ID
+            if (targetId === "#") {
+                window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll to top for Home
+            } else {
+                let targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 50, // Adjust offset if needed
+                        behavior: "smooth"
+                    });
+                }
+            }
+        });
+    });
+});
