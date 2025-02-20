@@ -11,47 +11,115 @@ body{
     display: none;
 }
 
-
-.sidebar {
+/* Styling the nav bar */
+nav{
     background-color: white;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.9);
-    position: relative;
-    display: flex;
-    padding: 10px;
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth transition */
-    transform: translateY(0); /* Sidebar is visible */
-    opacity: 1;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.9); /*Add shadow to the nav bar to give it depth */
 }
 
-.sidebar.hidden {
-    transform: translateY(-100%); /* Move sidebar up out of view */
-    opacity: 0;
-    pointer-events: none; /* Prevent interaction while hidden */
+/* Minimized navbar */
+nav.minimized {
+    height: 10px; /* Shrinks navbar */
+    opacity: 0.8;
+}
+
+/* Ensures navbar items shrink */
+nav.minimized ul {
+    display: none; /* Hide links inside navbar when minimized */
+}
+
+/* Style for the minimize button */
+#minimize-button {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
 }
 
 
-.sidebar ul {
-    display: flex;
-    justify-content: space-between; /* Ensures items are spaced apart */
-    align-items: center;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+
+/* Styles for the <ul/> */
+nav ul{
     width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
 }
 
-.sidebar a {
+
+/* Style the list items */
+/* We want the list items to define the height of their parents */
+nav li{
+    height: 50px; /* Set the height of the list items */
+}
+
+nav a{
     height: 100%;
-    padding: 0px 30px;
+    padding: 0px 30px; /* Add padding to the list items */
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: black;
 }
 
-.sidebar li:first-child{
-    margin-right: auto;
+/* We add the hover to each anchor, this way we get some visual feedback */
+nav a:hover{
+    background-color: #f0f0f0; /* Change the background color of the list items when hovered */;
 }
 
-.sidebar li:hover {
-    background-color: #5e5e5e3f;
+nav li:first-child{
+    margin-right: auto; /* Push the first list item to the left */
 }
+
+
+.sidebar{
+    position:fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 1);
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px   rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.sidebar li{
+    width: 100%;;
+}
+
+.sidebar a{
+    width: 100%;;
+}
+
+.menu-button{
+    display: none;
+}
+
+@media(max-width: 800px){
+    .hideOnMobile{
+        display: none;
+    }
+    .menu-button{
+        display: block;
+    }
+}
+
+@media(max-width: 400px){
+    .sidebar{
+        width: 100%;
+    }
+}
+
 
 
 #introduction {
@@ -288,3 +356,5 @@ body{
     text-align: left;
     font-size: 1em;
 }
+
+

@@ -1,17 +1,12 @@
-function showSidebar() {
+function showSidebar(){
     const sidebar = document.querySelector('.sidebar');
-    const returnButton = document.getElementById("return-menu-button");
-    sidebar.classList.remove('hidden');  
-    returnButton.style.display = 'none';  
+    sidebar.style.display = 'flex';
 }
 
-function hideSidebar() {
+
+function hideSidebar(){
     const sidebar = document.querySelector('.sidebar');
-    const returnButton = document.getElementById("return-menu-button");
-    sidebar.classList.add('hidden');
-    setTimeout(() => {
-        returnButton.style.display = 'flex';  
-    }, 300); // Matches transition duration
+    sidebar.style.display = 'none';
 }
 
 
@@ -32,5 +27,22 @@ function filterProjects() {
         projects.forEach(project => {
             project.style.display = 'block'; // Show all projects
         });
+    }
+}
+
+
+function minimizeNavbar() {
+    const navbar = document.querySelector("nav");
+    const minimizeButton = document.getElementById("minimize-button");
+    const icon = minimizeButton.querySelector("i"); // Select the icon inside the button
+
+    if (navbar.classList.contains("minimized")) {
+        navbar.classList.remove("minimized");
+        icon.classList.remove("fa-chevron-down");
+        icon.classList.add("fa-chevron-up"); // Change to "up" when expanded
+    } else {
+        navbar.classList.add("minimized");
+        icon.classList.remove("fa-chevron-up");
+        icon.classList.add("fa-chevron-down"); // Change to "down" when minimized
     }
 }

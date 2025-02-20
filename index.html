@@ -9,19 +9,30 @@
 </head>
 <body>
     <header>
-        <nav role="navigation" class="sidebar">
-            <ul>
-            <li onclick=hideSidebar()><i class="fas fa-bars"></i> </li>
-            <li ><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#Services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="return-menu">
-            <button id="return-menu-button" onclick="showSidebar()"><i class="fas fa-chevron-down"></i></button>
-        </div>
+        <button id="minimize-button" onclick="minimizeNavbar()" title="Minimize Navbar">
+            <i class="fas fa-chevron-up"></i>
+        </button>        
     </header>
+    
+    <nav>
+        <ul class="sidebar">
+            <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#000000"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Login</a></li>
+        </ul>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li class="hideOnMobile"><a href="#">About Us</a></li>
+            <li class="hideOnMobile"><a href="#">Services</a></li>
+            <li class="hideOnMobile"><a href="#">Products</a></li>
+            <li class="hideOnMobile"><a href="#">Login</a></li>
+            <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#000000"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+
+        </ul>
+    </nav>
+    
     <article id="introduction" role="doc-introduction">
         <h2>Introduction</h2>
         <p>Hello! I am currently learning web development and exploring various technologies to build dynamic and responsive websites. My journey involves mastering HTML, CSS, and JavaScript, along with diving into popular frameworks and libraries.</p>
@@ -66,11 +77,11 @@
                     <p>This project showcases a responsive web design, utilizing modern CSS techniques such as Flexbox and Grid to create a layout that adapts seamlessly to different screen sizes and devices.</p>
                 </li>
                 <li id="project2-backend" class="project backend">
-                    <h3>Project 2</h3>
+                    <h3>Back-End Project</h3>
                     <p>This project is centered around back-end development, implementing server-side logic using Node.js and Express to handle API requests and database interactions.</p>
                 </li>
                 <li id="project3-ml" class="project ml">
-                    <h3>Project 3</h3>
+                    <h3>Python</h3>
                     <p>This project involves machine learning, leveraging Python and TensorFlow to build and train models for predictive analytics and data processing.</p>
                 </li>
             </ul>
